@@ -1,7 +1,7 @@
 {
   "name": "page-object-pattern-example-protractor-mocha",
   "version": "1.0.0",
-  "description": "a simple example of page objects use with protractor with ES classes",
+  "description": "page objects protractor",
   "main": "index.js",
   "scripts": {
     "remove-logs": "node ./test/utils/cleanup/logsCleaner.js",
@@ -11,20 +11,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stranger2626/page-object-pattern-example-protractor-mocha.git"
+    "url": ""
   },
-  "author": "Matsvei Murashka",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stranger2626/page-object-pattern-example-protractor-mocha/issues"
+    "url": "https://github.com/KatchLex/page_object_protractor/issues"
   },
-  "homepage": "https://github.com/stranger2626/page-object-pattern-example-protractor-mocha#readme",
+  "homepage": "https://github.com/KatchLex/page_object_protractor#readme",
   "dependencies": {
-    "chai": "^4.2.0",
     "fs-extra": "^8.1.0",
-    "mocha": "^7.1.1",
-    "protractor": "^5.4.3",
-    "winston": "^3.2.1",
-    "yargs": "^14.0.0"
+    "protractor": "^5.4.4",
+    "winston": "^3.3.3",
+    "yargs": "^14.2.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
   }
 }
