@@ -10,11 +10,17 @@ describe("Home page header", function () {
 
     it("should have 6 menu items", async function () {
         await PageFactory.getPage("Home").open();
-        await PageFactory.getPage("Home").Header.navigationButtons.clickElementByText("OUR WORK");
-        const firstNavigationButton = PageFactory.getPage("Home").Header.navigationButtons.collection.get(0);
-        await browser.wait(EC.elementToBeClickable(firstNavigationButton), 10000);
-        const countOfNavigationButtons = await PageFactory.getPage("Home").Header.navigationButtons.getCount();
-        expect(countOfNavigationButtons).to.be.equal(6);
+        await PageFactory.getPage("Home").Header.clickSelectRegionDropdown();
+        await PageFactory.getPage("Home").Header.clickOtherCountryOption();
+        await PageFactory.getPage("Home").Header.clickContinueButton();
+        await PageFactory.getPage("Select Your Region").open();
+        await PageFactory.getPage("Select Your Region").clickAcceptCookiesButton();
+        await PageFactory.getPage("Select Your Region").clickSelectUsEnglish();
+        //await PageFactory.getPage("Home").Header.navigationButtons.clickElementByText("SUPPORT");
+        // const firstNavigationButton = PageFactory.getPage("Home").Header.navigationButtons.collection.get(3);
+        // await browser.wait(EC.elementToBeClickable(firstNavigationButton), 10000);
+        // const countOfNavigationButtons = await PageFactory.getPage("Home").Header.navigationButtons.getCount();
+        // expect(countOfNavigationButtons).to.be.equal(5);
     });
 
     // This an example of a bad implementation, don't to it this way EVER!

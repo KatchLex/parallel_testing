@@ -2,6 +2,8 @@ const yargs = require('yargs').argv;
 
 exports.config = {
 
+    restartBrowserBetweenTests: true,
+    
     directConnect: true,
 
     framework: 'mocha',

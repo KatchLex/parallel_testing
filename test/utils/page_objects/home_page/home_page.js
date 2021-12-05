@@ -5,8 +5,8 @@ const Collection = require("../base_elements/base_collection");
 class HomePage extends BasePage {
     constructor() {
       super();
-      this.url = "https://www.epam.com";
-      this.sections = new Collection("Sections", "div.section:not(.header)");
+      this.url = "https://www.westerndigital.com/";
+      this.sections = new Collection("Navigation Buttons", "div.header .div.text-center li");
     };
     open() {
       return super.open(this.url);

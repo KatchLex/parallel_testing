@@ -1,5 +1,5 @@
 const logger = require('../../../config/logger.config');
-class Element {
+class ElementCSS {
     constructor(elementName, selector) {
         this.element = element(by.css(selector));
         this.elementName = elementName;
@@ -15,4 +15,4 @@ class Element {
     };
 };
 
-module.exports = Element;
+module.exports = ElementCSS;

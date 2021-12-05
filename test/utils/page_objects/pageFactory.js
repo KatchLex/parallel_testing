@@ -1,5 +1,5 @@
 const HomePage = require("./home_page/home_page");
-const OurWorkPage = require("./our_work_page/our_work_page");
+const SelectYourRegion = require("./region_selector_page/region_selector_page");
 const BasePage = require("./base_page/base_page");
 
 class PageFactory {
@@ -7,8 +7,8 @@ class PageFactory {
         switch (pageName) {
             case "Home":
                 return new HomePage();
-            case "Our Work":
-                return new OurWorkPage();
+            case "Select Your Region":
+                return new SelectYourRegion();
             default:
                 return new BasePage();        
         };

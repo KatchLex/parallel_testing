@@ -1,15 +1,22 @@
-const logger = require("../../../config/logger.config");
-const Element = require("../base_elements/base_element");
-const Collection = require("../base_elements/base_collection");
+const ElementCSS = require("../base_elements/base_Element_CSS");
+const ElementLinkText = require("../base_elements/base_Element_LinkText");
+const Collection = require("../base_elements/base_Collection");
 
 class Header {
     constructor() {
-        this.navigationButtons = new Collection("Navigation Buttons", "div.header .top-navigation__item");
-        this.contactUsButton = new Element("Contact Us Button", ".cta-button-ui");
+        this.navigationButtons = new Collection("Navigation Buttons", "div.header .div.text-center li");
+        this.selectRegionDropdown = new ElementCSS("Select Region Button", "div.dropdownSelectOption");
+        this.otherCountryOption = new ElementLinkText("Other country or region", "Other country or region");
+        this.continueButton = new ElementLinkText("Continue Button", "Continue");
     };
-    clickContacktUs(){
-        logger.info(`Clicking "Contact Us Button"`);
-        return this.contactUsButton.click();
+    clickSelectRegionDropdown(){
+        return this.selectRegionDropdown.click();
+    };
+    clickOtherCountryOption(){
+        return this.otherCountryOption.click();
+    };
+    clickContinueButton(){
+        return this.continueButton.click();
     };
 };
 
