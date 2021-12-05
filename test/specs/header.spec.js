@@ -8,20 +8,26 @@ describe("Home page header", function () {
             return browser.manage().window().maximize();
     });
 
-    it("should have 6 menu items", async function () {
+    it("should open Region Selector Page with Continue button", async function () {
         await PageFactory.getPage("Home").open();
         await PageFactory.getPage("Home").Header.clickSelectRegionDropdown();
         await PageFactory.getPage("Home").Header.clickOtherCountryOption();
         await PageFactory.getPage("Home").Header.clickContinueButton();
+
+    });
+        //browser.wait(EC.visibilityOf($("//*[.='Select Your Region']")), 10000);
+        //await browser.wait(EC.elementToBeClickable(firstNavigationButton), 10000);
+    it("should allow selectin US English from Select Your Region page", async function () {
         await PageFactory.getPage("Select Your Region").open();
         await PageFactory.getPage("Select Your Region").clickAcceptCookiesButton();
         await PageFactory.getPage("Select Your Region").clickSelectUsEnglish();
+    });
         //await PageFactory.getPage("Home").Header.navigationButtons.clickElementByText("SUPPORT");
         // const firstNavigationButton = PageFactory.getPage("Home").Header.navigationButtons.collection.get(3);
         // await browser.wait(EC.elementToBeClickable(firstNavigationButton), 10000);
         // const countOfNavigationButtons = await PageFactory.getPage("Home").Header.navigationButtons.getCount();
         // expect(countOfNavigationButtons).to.be.equal(5);
-    });
+});
 
     // This an example of a bad implementation, don't to it this way EVER!
     // xit("should have 6 menu items (Example of how NOT to do it)", async function () {
@@ -35,5 +41,3 @@ describe("Home page header", function () {
     //     const countOfNavigationButtons = await element.all(by.css("div.header .top-navigation__item")).count();
     //     expect(countOfNavigationButtons).to.be.equal(6);
     // });
-
-});

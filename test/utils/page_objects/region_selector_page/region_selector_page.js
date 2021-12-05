@@ -2,7 +2,7 @@ const BasePage = require("../base_page/base_page");
 const ElementClassName = require("../base_elements/base_Element_ClassName");
 const ElementXpath = require("../base_elements/base_Element_Xpath");
 
-class SelectYourRegion extends BasePage {
+class SelectYourRegionPage extends BasePage {
     constructor() {
       super();
       this.url = "https://www.westerndigital.com/en-us/region-selector";
@@ -21,4 +21,4 @@ class SelectYourRegion extends BasePage {
     };
 };
 
-module.exports = SelectYourRegion;
+module.exports = SelectYourRegionPage;
