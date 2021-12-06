@@ -2,8 +2,6 @@ const yargs = require('yargs').argv;
 
 exports.config = {
 
-    restartBrowserBetweenTests: true,
-    
     directConnect: true,
 
     framework: 'mocha',
@@ -14,8 +12,6 @@ exports.config = {
 
     capabilities: {
         'browserName': 'chrome',
-        shardTestFiles: yargs.instances > 1,
-        maxInstances: yargs.instances || 1,
     },
 
     baseUrl: 'localhost',
