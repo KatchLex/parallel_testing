@@ -1,10 +1,8 @@
-const yargs = require('yargs').argv;
-
 exports.config = {
+    
+    seleniumAddress: 'http://localhost:4444/wd/hub',
 
     directConnect: true,
-
-    framework: 'mocha',
 
     specs: [
         '../specs/*.js'
@@ -14,10 +12,9 @@ exports.config = {
         'browserName': 'chrome',
     },
 
-    baseUrl: 'localhost',
-
-    mochaOpts: {
-        reporter: 'spec',
-        timeout: 70000
+    onPrepare: function () {
+        browser.driver.manage().window().maximize();
+        },
+    
+    jasmineNodeOpts: {showColors: true}
     }
-};
