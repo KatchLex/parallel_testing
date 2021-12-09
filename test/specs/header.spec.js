@@ -1,13 +1,13 @@
 const PageFactory = require("../utils/page_objects/pageFactory");
 const EC = protractor.ExpectedConditions;
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
-const {Builder, By, Key} = require('selenium-webdriver');
-//const chrome = require('selenium-webdriver/chrome');
+const {Key} = require('selenium-webdriver');
+const { element } = require("protractor");
 
 describe("Protractor", function () {
 
     beforeEach(function() {
-            //browser.ignoreSynchronization = true;
+            browser.ignoreSynchronization = true;
             return browser.manage().window().maximize();
     });
 
@@ -41,13 +41,25 @@ describe("Protractor", function () {
         const countOfNavigationButtons = await PageFactory.getPage("Blog").navigationButtons.getCount();
         expect(countOfNavigationButtons).toEqual(4);
     });
+});
 
-    it("Handler", async function () {
-        // chromeOptions = new chrome.Options();
-        // chromeOptions.addArguments('--start-maximized');
-        let driver = await new Builder().forBrowser('chrome').build();
-        await driver.get('https://www.handler.by');
-        await driver.findElement(By.className('top-btn inline-search-show twosmallfont')).click();
-        await driver.waitForVisibleElement(By.id('title-search-input'), 2000).sendKeys('системы', Key.ENTER);
+describe("Handler", function () {
+
+    beforeEach(function() {
+        browser.waitForAngularEnabled(false);
+        browser.get('https://www.handler.by');
+    });
+
+    it("should display 20 search results on a page", function () {
+        element(by.className('top-btn inline-search-show twosmallfont')).click();
+        element(by.id('title-search-input'), 2000).sendKeys('петли', Key.ENTER);
+        const searchResults = element.all(by.css('.item-title a:only-child'));
+        expect(searchResults.count()).toEqual(20);
+    });
+
+    it("'Политика' page should have 'Соглашение на обработку персональных данных' title", function () {
+        element(by.xpath("//*[contains(text(),'Политика')]")).click();
+        const agreement = element(by.css('#pagetitle'));
+        expect(agreement.getText()).toContain('Соглашение на обработку персональных данных', 'Bad Job');
     });
 });
