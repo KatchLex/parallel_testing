@@ -24,7 +24,7 @@ describe("Protractor", function () {
         await browser.executeScript("arguments[0].style.backgroundColor = '" + "Fuchsia" + "'", continueButton);
         await browser.actions().click(continueButton).perform();
         const currentURL = browser.wait(EC.urlIs("https://www.westerndigital.com/en-us/region-selector"), 6000);
-        expect(currentURL).toBe(true, "Current URL Not Found");
+        expect(currentURL).toBe(true);
         });
 
     it("should allow selecting Products via Search Input field", async function () {
@@ -63,7 +63,7 @@ describe("Handler", function () {
         browser.element(by.id('title-search-input'), 2000);
         browser.actions().sendKeys("петли").perform();
         const searchButton = browser.element(by.xpath("//button[@value='Найти']"));
-        browser.executeScript("arguments[0].style.backgroundColor = '" + "MediumVioletRed" + "'", searchButton);
+        browser.executeScript("arguments[0].style.backgroundColor = '" + "Lime" + "'", searchButton);
         const buttonClick = ".search-button-div  > :first-child";
         browser.executeScript("document.querySelector('" + buttonClick + "').click()");
         const searchResults = element.all(by.css('.item-title a:only-child'));
@@ -73,7 +73,7 @@ describe("Handler", function () {
     it("'Политика' page should have 'Соглашение на обработку персональных данных' title", function () {
         browser.get('https://www.handler.by')
         const policyButton = element(by.xpath("//*[contains(text(),'Политика')]"));
-        browser.executeScript("arguments[0].style.backgroundColor = '" + "Fuchsia" + "'", policyButton);
+        browser.executeScript("arguments[0].style.backgroundColor = '" + "MediumVioletRed" + "'", policyButton);
         browser.executeScript("arguments[0].scrollIntoView();", policyButton);
         browser.actions().click(policyButton).perform();
         const agreement = element(by.css('#pagetitle'));
