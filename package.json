@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/KatchLex/actions_module"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KatchLex/page_object_protractor/issues"
+    "url": "https://github.com/KatchLex/actions_module/issues"
   },
-  "homepage": "https://github.com/KatchLex/page_object_protractor#readme",
+  "homepage": "https://github.com/KatchLex/actions_module#readme",
   "dependencies": {
     "chromedriver": "^96.0.0",
     "fs-extra": "^8.1.0",
