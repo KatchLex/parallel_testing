@@ -77,7 +77,7 @@ describe("Handler", function () {
         browser.executeScript("arguments[0].scrollIntoView();", policyButton);
         browser.actions().click(policyButton).perform();
         const agreement = element(by.css('#pagetitle'));
-        expect(agreement.getText()).toContain('Соглашение на обработку персональных данных', 'Bad Job');
+        expect(agreement.getText()).toContain('Соглашение на обработку персональных данных');
     });
   });
 });
