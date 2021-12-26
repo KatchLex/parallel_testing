@@ -2,11 +2,12 @@ const PageFactory = require("../utils/page_objects/pageFactory");
 const EC = protractor.ExpectedConditions;
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
 const {Key} = require('selenium-webdriver');
-const { element } = require("protractor");
-var webDriver = require('selenium-webdriver');
-var driver = new webDriver.Builder().withCapabilities(
-    webDriver.Capabilities.chrome()
-).build();
+const { element } = require('protractor');
+const webDriver = require('selenium-webdriver');
+const driver = new webDriver.Builder()
+      .usingServer('http://localhost:4444/wd/hub')
+      .withCapabilities(webDriver.Capabilities.chrome())
+      .build();
 
 describe("Protractor", function () {
 
@@ -15,24 +16,26 @@ describe("Protractor", function () {
             return browser.manage().window().maximize();
     });
 
-    it("should open Region Selector Page with Continue button", async function () {
-        await PageFactory.getPage("Home").open();
-        await PageFactory.getPage("Home").Header.clickSelectRegionDropdown();
-        browser.wait(EC.visibilityOf(element(by.linkText("Other country or region"))), 6000);
-        await PageFactory.getPage("Home").Header.clickOtherCountryOption();
-        const continueButton = await element(by.linkText("Continue"));
-        await browser.executeScript("arguments[0].style.backgroundColor = '" + "Fuchsia" + "'", continueButton);
-        await browser.actions().click(continueButton).perform();
-        const currentURL = browser.wait(EC.urlIs("https://www.westerndigital.com/en-us/region-selector"), 6000);
-        expect(currentURL).toBe(true);
-        });
+    // Looks like this option is not available anymore on the site, so this test has been commented.
+
+    //it("should open Region Selector Page with Continue button", async function () {
+    //     await PageFactory.getPage("Home").open();
+    //     await PageFactory.getPage("Home").Header.clickSelectRegionDropdown();
+    //     browser.wait(EC.visibilityOf(element(by.linkText("Other country or region"))), 6000);
+    //     await PageFactory.getPage("Home").Header.clickOtherCountryOption();
+    //     const continueButton = await element(by.linkText("Continue"));
+    //     await browser.executeScript("arguments[0].style.backgroundColor = '" + "Fuchsia" + "'", continueButton);
+    //     await browser.actions().click(continueButton).perform();
+    //     const currentURL = browser.wait(EC.urlIs("https://www.westerndigital.com/en-us/region-selector"), 6000);
+    //     expect(currentURL).toBe(true);
+    //     });
 
     it("should allow selecting Products via Search Input field", async function () {
         await PageFactory.getPage("Select Your Region").open();
         await PageFactory.getPage("Select Your Region").clickSelectUsEnglish();
         await PageFactory.getPage("Home").clickExpandSearchField();
         await element(by.className('search expandright searchBTN')).sendKeys("G-drive", protractor.Key.ENTER);
-        browser.wait(EC.visibilityOf(element(by.xpath("//input[@value='Products']/.."))), 10000);
+        browser.wait(EC.visibilityOf(element(by.xpath("//input[@value='Products']/.."))), 15000);
         const arrayOfHeaderTexts = await element.all(by.xpath("//h3/*[1]")).getText();
         expect(arrayOfHeaderTexts.length).toEqual(10);
         const result = arrayOfHeaderTexts.every(element => element.includes("G-"));
