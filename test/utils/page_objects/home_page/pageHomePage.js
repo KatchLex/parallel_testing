@@ -1,6 +1,6 @@
-const BasePage = require("../base_page/base_page");
-const ElementClassName = require("../base_elements/base_Element_ClassName");
-const ElementXpath = require("../base_elements/base_Element_Xpath");
+const BasePage = require("../base_page/pageBasePage");
+const ElementClassName = require("../base_elements/elementElementClassName");
+const ElementXpath = require("../base_elements/elementElementXpath");
 
 class HomePage extends BasePage {
     constructor() {

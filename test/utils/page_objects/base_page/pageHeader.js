@@ -1,5 +1,5 @@
-const ElementCSS = require("../base_elements/base_Element_CSS");
-const ElementLinkText = require("../base_elements/base_Element_LinkText");
+const ElementCSS = require("../base_elements/elementElementCSS");
+const ElementLinkText = require("../base_elements/elementElementLinkText");
 
 class Header {
     constructor() {

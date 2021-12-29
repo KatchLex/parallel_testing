@@ -1,1 +1,1 @@
-Page object protractor task & Actions & JS Executor
+TA Frameworks and Loggers

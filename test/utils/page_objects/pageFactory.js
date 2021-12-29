@@ -1,7 +1,7 @@
-const HomePage = require("./home_page/home_page");
-const SelectYourRegionPage = require("./region_selector_page/region_selector_page");
-const BasePage = require("./base_page/base_page");
-const BlogPage = require("./blog_page/blog_page");
+const HomePage = require("./home_page/pageHomePage");
+const SelectYourRegionPage = require("./region_selector_page/pageSelectYourRegionPage");
+const BasePage = require("./base_page/pageBasePage");
+const BlogPage = require("./blog_page/pageBlogPage");
 
 class PageFactory {
     static getPage(pageName) {

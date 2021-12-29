@@ -1,5 +1,5 @@
 const logger = require('../../../config/logger.config');
-const Header = require('./header');
+const Header = require('./pageHeader');
 
 class BasePage {
     constructor() {
