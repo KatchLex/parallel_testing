@@ -1,6 +1,6 @@
-const fsextra = require('fs-extra');
-const path = require('path');
+// const fsextra = require('fs-extra');
+// const path = require('path');
 
-const logsLocation = path.resolve('./winston.log');
+// const logsLocation = path.resolve('./winston.log');
 
-fsextra.removeSync(logsLocation);
+// fsextra.removeSync(logsLocation);

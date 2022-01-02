@@ -27,6 +27,7 @@
     "log4js": "^6.3.0",
     "protractor": "^7.0.0",
     "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5",
     "yargs": "^17.3.0"
   },
   "devDependencies": {
