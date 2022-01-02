@@ -1,14 +1,14 @@
 const logger = require('../../../config/logger.config');
 
-class ElementClassName {
+class DropdownCSS {
     constructor(elementName, selector) {
-        this.element = element(by.className(selector));
+        this.element = element(by.css(selector));
         this.elementName = elementName;
     }
     click() {
-        logger.info(`Clicking "${this.elementName}"`);
+        logger.info(`Clicking "${this.elementName}" dropdown`);
         return this.element.click();
     };
 };
 
-module.exports = ElementClassName;
+module.exports = DropdownCSS;

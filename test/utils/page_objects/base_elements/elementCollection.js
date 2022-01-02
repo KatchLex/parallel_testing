@@ -10,11 +10,6 @@ class Collection {
         logger.info(`Count of "${this.elementName}" is "${collectionCount}"`); 
         return collectionCount;
     };
-    async getTexts() {
-        const arrayOfCollectionTexts = await this.collection.getText();
-        logger.info(`Texts of "${this.elementName}" are [${arrayOfCollectionTexts}]`);
-        return arrayOfCollectionTexts;
-    };
     async clickElementByText(textToClick) {
         const arrayOfElementTexts = await this.collection.getText();
         const elementToClickIndex = arrayOfElementTexts.indexOf(textToClick);

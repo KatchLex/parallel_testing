@@ -1,11 +1,12 @@
-const ElementCSS = require("../base_elements/elementElementCSS");
-const ElementLinkText = require("../base_elements/elementElementLinkText");
+const DropdownCSS = require('../base_elements/elementDropdownCSS');
+const ElementLinkText = require('../base_elements/elementElementLinkText');
+const ButtonLinkText = require('../base_elements/elementButtonLinkText');
 
 class Header {
     constructor() {
-        this.selectRegionDropdown = new ElementCSS("Select Region Button", "div.dropdownSelectOption");
-        this.otherCountryOption = new ElementLinkText("Other country or region", "Other country or region");
-        this.continueButton = new ElementLinkText("Continue Button", "Continue");
+        this.selectRegionDropdown = new DropdownCSS('Select Region', 'div.dropdownSelectOption');
+        this.otherCountryOption = new ElementLinkText('Other country or region', 'Other country or region');
+        this.continueButton = new ButtonLinkText('Continue', 'Continue');
     };
     clickSelectRegionDropdown(){
         return this.selectRegionDropdown.click();
