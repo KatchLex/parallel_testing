@@ -1,1 +1,1 @@
-java -jar selenium-server-4.1.1.jar node --max-sessions 3 --port 5555
+java -jar selenium-server-4.1.1.jar node --max-sessions 5 --port 5555
