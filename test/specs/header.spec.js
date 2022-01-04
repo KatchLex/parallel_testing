@@ -5,10 +5,10 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
 const {Key} = require('selenium-webdriver');
 const { element } = require('protractor');
 const webDriver = require('selenium-webdriver');
-const driver = new webDriver.Builder()
-      .usingServer('http://localhost:4444/wd/hub')
-      .withCapabilities(webDriver.Capabilities.chrome())
-      .build();
+// const driver = new webDriver.Builder()
+//       .usingServer('http://localhost:4444/wd/hub')
+//       .withCapabilities(webDriver.Capabilities.chrome())
+//       .build();
 
 describe('Protractor', function () {
 
@@ -36,7 +36,7 @@ describe('Protractor', function () {
         await PageFactory.getPage('Select Your Region').clickSelectUsEnglish();
         await PageFactory.getPage('Home').clickExpandSearchField();
         await element(by.className('search expandright searchBTN')).sendKeys('G-drive', protractor.Key.ENTER);
-        browser.wait(EC.visibilityOf(element(by.xpath("//input[@value='Products']/.."))), 5000);
+        browser.wait(EC.visibilityOf(element(by.xpath("//input[@value='Products']/.."))), 7000);
         const arrayOfHeaderTexts = await element.all(by.xpath('//h3/*[1]')).getText();
         expect(arrayOfHeaderTexts.length).toEqual(10);
         const result = arrayOfHeaderTexts.some(element => element.includes('SSD'));
