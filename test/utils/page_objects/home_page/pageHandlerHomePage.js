@@ -8,6 +8,7 @@ class HandlerHomePage extends BasePage {
     this.url = 'https://www.handler.by/';
     this.openSearch = new ElementButtonClassName('Open Search Field', 'top-btn inline-search-show twosmallfont');
     this.linkPolicy = new ElementXpath('Open Policy link', "//*[contains(text(),'Политика')]");
+    this.handlerSearchButton = new ElementXpath('Open Search Field', "//button[@value='Найти']");
   };
   open() {
     return super.open(this.url);

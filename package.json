@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/KatchLex/ta_frameworks"
+    "url": "https://github.com/KatchLex/parallel_testing"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KatchLex/ta_frameworks/issues"
+    "url": "https://github.com/KatchLex/parallel_testing/issues"
   },
-  "homepage": "https://github.com/KatchLex/ta_frameworks#readme",
+  "homepage": "https://github.com/KatchLex/parallel_testing#readme",
   "dependencies": {
     "argv": "^0.0.2",
     "chromedriver": "^96.0.0",

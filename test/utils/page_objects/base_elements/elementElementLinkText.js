@@ -9,6 +9,10 @@ class ElementLinkText {
         logger.info(`Clicking "${this.elementName}"`);
         return this.element.click();
     };
+    
+    get() {
+        return this.element.get();
+    }
 };
 
 module.exports = ElementLinkText;

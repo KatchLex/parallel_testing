@@ -9,6 +9,6 @@ class ElementButtonClassName {
         logger.info(`Clicking "${this.elementName}" button`);
         return this.element.click();
     };
-};
+ };
 
 module.exports = ElementButtonClassName;
